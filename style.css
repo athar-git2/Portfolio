@@ -1,0 +1,39 @@
+/* Smooth page scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar width */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar handle */
+body::-webkit-scrollbar-thumb {
+    background-color: #4F46E5;
+    border-radius: 4px;
+}
+
+/* Scrollbar background */
+body::-webkit-scrollbar-track {
+    background-color: #1F2937;
+}
+
+/* Timeline item spacing */
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Timeline marker */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #4F46E5;
+    border-radius: 50%;
+    border: 2px solid #818CF8;
+}

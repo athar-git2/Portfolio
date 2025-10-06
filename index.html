@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Atharuddin - Software Engineer Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4F46E5',
+                        'secondary': '#818CF8',
+                        'background-dark': '#111827',
+                        'card-dark': '#1F2937',
+                        'text-light': '#F9FAFB',
+                        'text-muted': '#D1D5DB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-background-dark text-text-light font-sans">
+
+    <!-- Header and Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-card-dark bg-opacity-95 shadow-lg backdrop-blur-md border-b border-primary/20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex items-center justify-end h-16 md:justify-center">
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="flex items-baseline space-x-4">
+
+                        <a href="#hero"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Home</a>
+                        <a href="#summary"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">About</a>
+                        <a href="#experience"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Experience</a>
+                        <a href="#projects"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Projects</a>
+                        <a href="#skills"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Skills</a>
+                        <a href="#education"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Education</a>
+                        <a href="#contact"
+                            class="text-text-muted hover:text-primary px-4 py-2 rounded-xl text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/50">Contact</a>
+                    </div>
+                </div>
+
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-text-muted hover:text-text-light hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                        aria-controls="mobile-menu" aria-expanded="false">
+
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Mobile Menu Dropdown Content -->
+        <div id="mobile-menu" class="hidden md:hidden bg-card-dark border-t border-primary/20 pb-2">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+
+                <a href="#hero"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Home</a>
+                <a href="#summary"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">About</a>
+                <a href="#experience"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Experience</a>
+                <a href="#projects"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Projects</a>
+                <a href="#skills"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Skills</a>
+                <a href="#education"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Education</a>
+                <a href="#contact"
+                    class="text-text-muted hover:bg-primary/20 hover:text-primary block px-3 py-2 rounded-xl text-lg font-medium transition-all duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+        <!-- Hero Section -->
+        <section id="hero" class="flex items-center py-24 sm:py-32">
+
+
+            <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between max-w-6xl mx-auto md:space-x-12 w-full">
+
+                <!-- Profile Image Container -->
+                <div class="md:w-1/2 mb-10 md:mb-0 flex justify-center order-1 md:order-2">
+
+                    <img src="images\hero-img.jpeg" alt="Mohammad Atharuddin Profile"
+                        class="w-56 h-56 sm:w-80 sm:h-80 object-cover rounded-full shadow-2xl ring-4 ring-primary/50 transition-transform duration-500 hover:scale-105"
+                        onerror="this.onerror=null; this.src='https://placehold.co/300x300/4F46E5/FFFFFF/png?text=M.A.'">
+                </div>
+
+
+                <!-- Title, Summary, and Buttons -->
+                <div class="md:w-1/2 text-center md:text-left order-2 md:order-1">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-text-light">
+                        MOHAMMAD <span class="text-primary">ATHARUDDIN</span>
+                    </h1>
+                    <p class="mt-4 text-xl sm:text-2xl text-text-muted">
+                        Software Engineer
+                    </p>
+                    <div
+                        class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+
+                        <!-- Resume Download Button -->
+                        <a href="https://drive.google.com/file/d/1HfVNo00aNynGF1CdH8JPGFexGMbvxZZb/view?usp=sharing"
+                            download="Mohammad_Atharuddin_Resume.pdf"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl shadow-lg text-text-light bg-primary hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                            Download Resume
+                        </a>
+
+                        <!-- LinkedIn Button -->
+                        <a href="https://www.linkedin.com/in/md-athar213232" target="_blank"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-xl shadow-lg text-primary bg-transparent hover:bg-primary/10 transition duration-300">
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mt-12 mb-12"></div>
+
+
+        <!-- About Me -->
+        <section id="summary" class="mb-24">
+            <h2 class="text-3xl font-bold text-text-light mb-6 border-l-4 border-primary pl-4">About Me</h2>
+
+            <div
+                class="bg-card-dark rounded-2xl p-8 shadow-2xl border border-primary/30 transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-secondary">
+
+                <!-- Summary paragraph -->
+                <p class="text-lg text-text-muted leading-relaxed mb-8">
+                    Passionate about building scalable and high-performance backend systems, I specialize in
+                    <strong>Core Java, Spring Boot, Hibernate, and RESTful APIs</strong> to develop clean, reliable, and
+                    efficient applications that deliver real value.
+                </p>
+
+                <p class="text-lg text-text-muted leading-relaxed mb-8">
+                    Turning ideas into robust backend solutions is what drives me — from designing APIs and managing
+                    databases to integrating seamlessly with front-end systems. The focus remains on writing clean,
+                    modular, and maintainable code that follows best practices for scalability and long-term success.
+                </p>
+
+                <p class="text-lg text-text-muted leading-relaxed mb-8">
+                    Dedicated to solving complex problems and optimizing performance, I thrive in collaborative
+                    environments that aim to build impactful, elegant, and enduring software solutions.
+                </p>
+
+                <!-- Key Highlights -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-primary/10">
+
+                    <!-- Highlight 1: Core Tech Stack -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">Core Tech Stack</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Expertise in <strong>Java OOP, Spring Boot, and optimized MySQL/Oracle</strong> to ensure
+                            data integrity, scalability, and fast data retrieval.
+                        </p>
+                    </div>
+                    <!-- Highlight 2: Backend Scalability -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12h14M5 12a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v5a2 2 0 01-2 2M5 12h14a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm0 0h14">
+                                </path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">Backend Scalability</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Focused on building <strong>high-performance, reliable Java/Spring Boot</strong>
+                            applications optimized for scalability, and efficiency.
+                        </p>
+                    </div>
+
+                    <!-- Highlight 3: Database Management -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M3 6h18M3 14h18M3 18h18"></path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">Database Management</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Proficient in <strong>SQL & NoSQL databases</strong>, designing schemas, optimizing queries,
+                            and ensuring data integrity for high-volume applications.
+                        </p>
+                    </div>
+
+                    <!-- Highlight 4: Performance Optimization -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3">
+                                </path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">Performance Optimization</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Skilled in analyzing bottlenecks and implementing <strong>efficient algorithms, caching, and
+                                multithreading</strong> to improve application performance.
+                        </p>
+                    </div>
+
+                    <!-- Highlight 5: Agile & Delivery -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">Agile & Delivery</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Proven ability to resolve complex production issues and deliver high-quality features on
+                            schedule within <strong>Agile/Scrum environments</strong>.
+                        </p>
+                    </div>
+
+
+                    <!-- Highlight 6: API Design & Integration -->
+                    <div
+                        class="p-4 rounded-xl border border-secondary/50 bg-primary/10 transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+                        <div class="flex items-center mb-3">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 12h8m-8-4h8m-8 8h8"></path>
+                            </svg>
+                            <h4 class="text-lg font-bold text-text-light">API Design & Integration</h4>
+                        </div>
+                        <p class="text-sm text-text-muted">
+                            Expertise in designing <strong>RESTful APIs</strong> and integrating backend services with
+                            front-end frameworks and third-party systems.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mb-16"></div>
+
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="mb-24">
+            <h2 class="text-3xl font-bold text-text-light mb-8 border-l-4 border-primary pl-4">Professional Experience
+            </h2>
+
+            <div
+                class="bg-card-dark rounded-2xl p-8 shadow-2xl border border-primary/30 transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-secondary">
+
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-text-light">Software Engineer</h3>
+                        <p class="text-secondary text-lg">BrightCanyon Solutions Pvt Ltd</p>
+                    </div>
+                    <span
+                        class="mt-2 sm:mt-0 text-sm text-text-muted bg-primary/20 px-3 py-1 rounded-full font-medium">Sep
+                        2022 - Present</span>
+                </div>
+
+                <div class="h-px bg-primary/20 mb-6"></div>
+
+                <!--  Group: Performance & Optimization -->
+                <h4 class="text-lg font-bold text-secondary mb-3 mt-6">Performance & Optimization</h4>
+                <ul class="space-y-3 text-text-muted list-disc ml-5">
+                    <li class="pl-2">
+                        Developed and maintained scalable Java applications using <strong>Spring Boot</strong> and
+                        <strong>REST API</strong>, resulting in a <strong>20-25% improvement in processing
+                            speed</strong>.
+                    </li>
+                    <li class="pl-2">
+                        Optimized <strong>MySQL</strong> queries and database schemas, improving data retrieval
+                        efficiency by <strong>20%</strong> and reducing load times.
+                    </li>
+                    <li class="pl-2">
+                        Engineered robust business logic, <strong>multithreading</strong>, and exception handling,
+                        boosting application performance by <strong>25%</strong> and reducing runtime errors by
+                        <strong>35%</strong>.
+                    </li>
+                </ul>
+
+
+                <!--  Group: Architecture & Development -->
+                <h4 class="text-lg font-bold text-secondary mb-3 mt-6">Architecture & Development</h4>
+                <ul class="space-y-3 text-text-muted list-disc ml-5">
+                    <li class="pl-2">
+                        Applied <strong>Maven</strong> for build automation and dependency management, and leveraged
+                        design patterns (Singleton, MVC) to build highly efficient, maintainable, and scalable backend
+                        applications.
+                    </li>
+                    <li class="pl-2">
+                        Designed and integrated REST APIs with <strong>Swagger/OpenAPI</strong> documentation, enhancing
+                        collaboration with frontend and QA teams.
+                    </li>
+                    <li class="pl-2">
+                        Authored unit tests using <strong>JUnit</strong> and <strong>Mockito</strong>, ensuring high
+                        code quality and significantly reducing production issues.
+                    </li>
+                </ul>
+
+                <h4 class="text-lg font-bold text-secondary mb-3 mt-6">Collaboration & Delivery</h4>
+                <ul class="space-y-3 text-text-muted list-disc ml-5">
+                    <li class="pl-2">
+                        Collaborated with cross-functional <strong>Agile/Scrum teams</strong>, delivering <strong>95% of
+                            project features</strong> on schedule while adopting emerging technologies for continuous
+                        improvement.
+                    </li>
+                </ul>
+        </section>
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mb-16"></div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-24">
+            <h2 class="text-3xl font-bold text-text-light mb-8 border-l-4 border-primary pl-4">Featured Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Project Card 1: Project Management and Information System -->
+                <div
+                    class="bg-card-dark rounded-2xl p-6 shadow-xl border border-primary/30 transition duration-300 hover:border-secondary flex flex-col hover:shadow-2xl hover:shadow-primary/50 hover:scale-[1.02]">
+                    <h3 class="text-xl font-bold text-primary mb-1">Project Management and Information System</h3>
+                    <p class="text-text-muted text-sm mb-4"></p>
+
+                    <p class="text-text-light mb-4 flex-grow">
+                        Engineered the SynTrack Engine to consolidate disparate data sources (<strong>MS Excel,
+                            Primavera P6, and Tally</strong>), designing the backend and database modules to automate
+                        workflows and reduce manual effort for project tracking.
+                    </p>
+
+                    <!-- Key Result -->
+                    <div class="bg-primary/10 border-l-4 border-primary p-3 mb-4 rounded-r-lg">
+                        <p class="text-text-light font-semibold">
+                            Key Result: Improved project tracking efficiency by <span
+                                class="text-secondary font-extrabold text-lg">35%</span>.
+                        </p>
+                    </div>
+
+                    <!-- Tech Stack-->
+                    <div class="flex flex-wrap gap-2 text-sm mt-auto">
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Java</span>
+                        <span class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Spring
+                            Boot</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Hibernate/Spring
+                            Data JPA</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">AWS</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Docker</span>
+
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Battery Warranty Registration Portal -->
+                <div
+                    class="bg-card-dark rounded-2xl p-6 shadow-xl border border-primary/30 transition duration-300 hover:border-secondary flex flex-col hover:shadow-2xl hover:shadow-primary/50 hover:scale-[1.02]">
+                    <h3 class="text-xl font-bold text-primary mb-1">Battery Warranty Registration Portal</h3>
+                    <p class="text-text-muted text-sm mb-4">Paperless customer warranty solution</p>
+
+                    <p class="text-text-light mb-4 flex-grow">
+                        Developed a web-based portal for paperless warranty registration, enabling the capture of
+                        <strong>serial numbers, purchase details, and customer information</strong>. This also
+                        facilitated targeted marketing.
+                    </p>
+
+                    <!-- Key Result -->
+                    <div class="bg-primary/10 border-l-4 border-primary p-3 mb-4 rounded-r-lg">
+                        <p class="text-text-light font-semibold">
+                            Key Result: Cut manual processing time by <span
+                                class="text-secondary font-extrabold text-lg">30%</span> and improved data accuracy by
+                            <span class="text-secondary font-extrabold text-lg">25%</span>.
+                        </p>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div class="flex flex-wrap gap-2 text-sm mt-auto">
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Java</span>
+                        <span class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Spring
+                            Boot</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">Hibernate/JPA</span>
+                        <span
+                            class="bg-primary/20 text-text-light px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mb-16"></div>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="mb-24">
+            <h2 class="text-3xl font-bold text-text-light mb-8 border-l-4 border-primary pl-4">Technical Skills &
+                Expertise</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Backend & Data Skills -->
+                <div
+                    class="bg-card-dark rounded-2xl p-6 shadow-xl border border-transparent transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-primary/50 hover:scale-[1.03]">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Backend & Data</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Java
+                            (Java 8)</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">OOP</span>
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Spring
+                            Boot</span>
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">RESTful
+                            APIs</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Microservices</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">MySQL</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Oracle</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Lombok</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Redis</span>
+
+                    </div>
+                </div>
+
+                <!-- ORM & Persistence -->
+                <div
+                    class="bg-card-dark rounded-2xl p-6 shadow-xl border border-transparent transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-primary/50 hover:scale-[1.03]">
+                    <h3 class="text-xl font-bold text-secondary mb-4">ORM & Persistence</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Spring
+                            Data JPA</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Hibernate</span>
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">JUnit /
+                            Mockito</span>
+                    </div>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div
+                    class="bg-card-dark rounded-2xl p-6 shadow-xl border border-transparent transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-primary/50 hover:scale-[1.03]">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Tools & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Maven</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">AWS</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Docker</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Postman</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">HTML/CSS/JS</span>
+                        <span class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Git /
+                            GitHub</span>
+                        <span
+                            class="bg-primary/30 text-text-light px-4 py-1.5 rounded-full text-sm font-medium">Swagger/OpenAPi</span>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mb-16"></div>
+
+        <!-- Education History Section -->
+        <section id="education" class="mb-24">
+            <h2 class="text-3xl font-bold text-text-light mb-8 border-l-4 border-primary pl-4">Education</h2>
+
+            <div
+                class="bg-card-dark rounded-2xl p-6 shadow-xl border border-primary/30 transition duration-300 hover:shadow-2xl hover:shadow-primary/50 hover:border-secondary">
+
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-text-light">Bachelor of Computer Applications (BCA)</h3>
+                    <p class="text-secondary mt-1">MGM College of CS & IT, Nanded</p>
+                    <p class="text-text-muted mt-2 text-sm">Graduation: 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Divider Line -->
+        <div class="h-px bg-primary/20 max-w-4xl mx-auto mb-16"></div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16 text-center">
+            <h2 class="text-3xl font-bold text-text-light mb-8 border-l-4 border-primary pl-4 inline-block">Get In Touch
+            </h2>
+            <p class="text-lg text-text-muted mb-10 max-w-2xl mx-auto">
+                I am actively seeking new opportunities to build scalable and high-performing backend systems. Feel free
+                to connect with me!
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+
+                <!-- Email Contact Info -->
+                <div class="flex items-center justify-center space-x-3 text-lg">
+
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <span
+                        class="text-text-light hover:text-primary transition duration-200">athar.connects@gmail.com</span>
+                </div>
+
+
+                <!-- Phone Contact Info -->
+                <div class="flex items-center justify-center space-x-3 text-lg">
+
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                        </path>
+                    </svg>
+                    <span class="text-text-light">7498213232</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-card-dark py-8 border-t border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted text-sm">
+            <p>&copy; 2025 Mohammad Atharuddin. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="https://www.linkedin.com/in/md-athar213232" target="_blank"
+                    class="hover:text-primary transition duration-200">LinkedIn</a>
+                <a href="mailto:athar.connects@gmail.com" class="hover:text-primary transition duration-200">Email</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
